@@ -9,8 +9,9 @@ export default function Home({ allPostsData, pageData }) {
     <Layout url="/" title={pageData.title}>
       <div>
         <Hero image={pageData.image}>
-          <h1>{pageData.heading}</h1>
-          <p>{pageData.subheading}</p>
+          <h1 className="my-0">{pageData.heading}</h1>
+          <p className="text-xl mb-6">{pageData.subheading}</p>
+          <a className="btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/rfargetton/nextjs-netlifycms">Deploy to Netlify</a>
         </Hero>
 
         <PostList posts={allPostsData}>
