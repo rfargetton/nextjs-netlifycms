@@ -1,8 +1,8 @@
 import { getAllFilesData } from "../lib/folder";
 import { getFile } from "../lib/file";
-import Layout from "../components/layout";
-import Hero from "../components/hero";
-import PostList from "../components/post-list";
+import Layout from "@components/layout";
+import Hero from "@components/hero";
+import PostList from "@components/post-list";
 
 export default function Home({ allPostsData, pageData }) {
   return (

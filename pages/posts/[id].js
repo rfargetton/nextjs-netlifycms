@@ -1,9 +1,9 @@
 import settings from "../../config.json";
 
-import Date from "../../components/date";
-import Layout from "../../components/layout";
-import Hero from "../../components/hero";
-import PostContent from "../../components/post-content";
+import Date from "@components/date";
+import Layout from "@components/layout";
+import Hero from "@components/hero";
+import PostContent from "@components/post-content";
 import { getAllFilesId, getFileData } from "../../lib/folder";
 
 export default function Post({ postData }) {
