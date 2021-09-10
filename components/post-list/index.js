@@ -10,11 +10,11 @@ export default function PostList({ posts, children }) {
   return (
     <div className="my-8">
       <Container>
-        <div className="py-4 w-full md:w-8/12 mx-auto text-center">
+        <div className="py-2 md:py-4 w-full md:w-8/12 mx-auto text-center">
           {children}
         </div>
         <div>
-          <ul className="grid grid-cols-2 gap-6 list-none">
+          <ul className="grid md:grid-cols-2 gap-6 list-none">
             {posts.map((post) => (
               <li key={post.id} className="transform hover:scale-105 transition">
                 <Card>
