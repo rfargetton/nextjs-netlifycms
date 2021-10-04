@@ -4,10 +4,9 @@ import Date from "@components/date";
 import Layout from "@components/layout";
 import Hero from "@components/hero";
 import PostContent from "@components/post-content";
-import { getAllFilesId, getFileData } from "../../lib/folder";
-import { getPlaiceholder } from "plaiceholder";
+import { getAllFilesId, getFileDataWithPlaiceholder } from "../../lib/folder";
 
-export default function Post({ postData, imageProps }) {
+export default function Post({ postData }) {
   return (
     <Layout
       url={`/posts/${postData.id}`}
@@ -16,7 +15,7 @@ export default function Post({ postData, imageProps }) {
       description="Some description text"
     >
       <Hero
-        imageProps={imageProps}
+        imageProps={postData.imageBlur}
       >
         <h1>{postData.title}</h1>
         <Date dateString={postData.date} />
@@ -29,6 +28,7 @@ export default function Post({ postData, imageProps }) {
 
 export async function getStaticPaths() {
   const paths = await getAllFilesId("posts");
+  
   return {
     paths,
     fallback: false,
@@ -36,16 +36,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getFileData("posts", params.id);
-  const { blurhash, img } = await getPlaiceholder(postData.img);
+  const postData = await getFileDataWithPlaiceholder("posts", params.id);
 
   return {
     props: {
-      postData,
-      imageProps: {
-        img,
-        blurhash
-      }
+      postData
     },
   };
 }

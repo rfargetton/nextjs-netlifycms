@@ -2,7 +2,6 @@ import Container from "@components/container";
 import BlurhashImage from "@components/blurhash-image";
 
 export default function Hero({ imageProps, children }) {
-  console.log(imageProps);
   return (
     <div className="bg-gray-200 py-8 md:py-16">
       <Container>
