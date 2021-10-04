@@ -28,6 +28,8 @@ collections:
           - { name: "title", label: "title", widget: "string", default: "Home" }
           - { name: "heading", label: "Heading" }
           - { name: "subheading", label: "Subheading", widget: "text"  }
+          - { label: "Image", name: "image", widget: "image", default: "/images/default.jpg" }
+
       - label: "About"
         name: "about"
         file: content/pages/about.md

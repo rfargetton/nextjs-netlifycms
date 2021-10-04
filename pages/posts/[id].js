@@ -4,7 +4,7 @@ import Date from "@components/date";
 import Layout from "@components/layout";
 import Hero from "@components/hero";
 import PostContent from "@components/post-content";
-import { getAllFilesId, getFileData } from "../../lib/folder";
+import { getAllFilesId, getFileDataWithPlaiceholder } from "../../lib/folder";
 
 export default function Post({ postData }) {
   return (
@@ -15,7 +15,7 @@ export default function Post({ postData }) {
       description="Some description text"
     >
       <Hero
-        image={postData.img}
+        imageProps={postData.imageBlur}
       >
         <h1>{postData.title}</h1>
         <Date dateString={postData.date} />
@@ -28,6 +28,7 @@ export default function Post({ postData }) {
 
 export async function getStaticPaths() {
   const paths = await getAllFilesId("posts");
+  
   return {
     paths,
     fallback: false,
@@ -35,11 +36,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getFileData("posts", params.id);
+  const postData = await getFileDataWithPlaiceholder("posts", params.id);
 
   return {
     props: {
-      postData,
+      postData
     },
   };
 }

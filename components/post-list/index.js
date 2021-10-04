@@ -1,10 +1,10 @@
 import Link from "next/link";
-import {ArrowRight} from "react-feather";
-import Image from "next/image";
+import { ArrowRight } from "react-feather";
 
 import Date from "../date";
 import Container from "../container";
 import Card from "../card";
+import BlurhashImage from "@components/blurhash-image";
 
 export default function PostList({ posts, children }) {
   return (
@@ -16,15 +16,14 @@ export default function PostList({ posts, children }) {
         <div>
           <ul className="grid md:grid-cols-2 gap-6 list-none">
             {posts.map((post) => (
-              <li key={post.id} className="transform hover:scale-105 transition">
+              <li
+                key={post.id}
+                className="transform hover:scale-105 transition"
+              >
                 <Card>
                   <div className="p-4">
-                    <div className="relative h-48 w-full rounded-xl overflow-hidden">
-                      <Image 
-                        src={post.img}
-                        layout="fill"
-                        objectFit="cover"
-                      />
+                    <div className="relative h-56 w-full rounded-xl overflow-hidden flex">
+                      <BlurhashImage imageProps={post.imageProps} />
                     </div>
                     <div className="mt-4">
                       <Date dateString={post.date} />
@@ -41,7 +40,7 @@ export default function PostList({ posts, children }) {
                       </Link>
                     </div>
                   </div>
-                </Card>          
+                </Card>
               </li>
             ))}
           </ul>
