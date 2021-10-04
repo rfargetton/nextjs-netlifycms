@@ -1,5 +1,5 @@
-import Container from "../container";
-import Card from "../card";
+import Container from "@components/container";
+import Card from "@components/card";
 
 export default function PostContent({htmlContent}){
   return(

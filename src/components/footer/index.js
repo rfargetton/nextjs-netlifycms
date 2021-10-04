@@ -1,5 +1,5 @@
-import Container from "../container";
-import settings from "../../config.json";
+import Container from "@components/container";
+import settings from "../../../config.json";
 
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 import Link from "next/link" ;
 
-import Container from "../container";
-import settings from "../../config.json";
+import Container from "@components/container";
+import settings from "../../../config.json";
 
 export default function Header({ siteName }) {
   return (

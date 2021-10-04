@@ -1,7 +1,7 @@
 import Head from "next/head" ;
-import Header from "../header";
-import Footer from "../footer";
-import settings from "../../config.json"
+import Header from "@components/header";
+import Footer from "@components/footer";
+import settings from "../../../config.json"
 
 export default function Layout({ children, url, title, description, image }) {
   return (
