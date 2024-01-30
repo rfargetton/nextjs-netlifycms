@@ -1,5 +1,5 @@
 import Container from "@components/container";
-import BlurhashImage from "@components/blurhash-image";
+import ImageWithPlaceholder from "@components/image-placeholder";
 
 export default function Hero({ imageProps, children }) {
   return (
@@ -11,7 +11,7 @@ export default function Hero({ imageProps, children }) {
           </div>
           <div className="ml-auto w-full md:w-8/12 max-h-96 relative rounded-r-xl overflow-hidden flex">
             <div className="absolute z-10 top-0 bottom-0 w-4/12 bg-gradient-to-r from-gray-200 to-transparent"></div>
-            <BlurhashImage 
+            <ImageWithPlaceholder 
               imageProps={imageProps}
             />
           </div>

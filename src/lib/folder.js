@@ -51,12 +51,12 @@ export async function getAllFilesData(folderName) {
 export async function getAllFilesDataWithPlaiceholder(folderName){
   const allFilesData = await getAllFilesData(folderName);
   const allFilesDataWithPlaiceholder = await Promise.all(allFilesData.map( async function(data){
-    const { blurhash, img } = await getPlaiceholder(data.image);
+    const { base64, img } = await getPlaiceholder(data.image);
 
     return { 
       ...data, 
       imageProps: {
-        blurhash, 
+        base64,
         img
       }
     }
@@ -119,11 +119,11 @@ export async function getFileData(folderName, id) {
 // Docs: https://plaiceholder.co/docs/plugins/next
 export async function getFileDataWithPlaiceholder(folderName, id){
   const fileData = await getFileData(folderName, id);
-  const { blurhash, img } = await getPlaiceholder(fileData.image);
+  const { base64, img } = await getPlaiceholder(fileData.image);
 
   return {
     imageBlur: {
-      blurhash,
+      base64,
       img
     },
     ...fileData

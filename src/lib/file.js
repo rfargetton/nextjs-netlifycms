@@ -26,11 +26,11 @@ export async function getFile(folderName, fileName) {
 // Docs: https://plaiceholder.co/docs/plugins/next
 export async function getFileWithPlaiceholder(folderName, fileName){
   const fileData = await getFile(folderName, fileName);
-  const { blurhash, img } = await getPlaiceholder(fileData.image);
+  const { base64, img } = await getPlaiceholder(fileData.image);
 
   return {
     imageBlur: {
-      blurhash,
+      base64,
       img
     },
     ...fileData
