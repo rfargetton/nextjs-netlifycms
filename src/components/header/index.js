@@ -9,16 +9,16 @@ export default function Header({ siteName }) {
       <Container>
         <nav className="flex flex-col md:flex-row justify-between items-stretch md:items-center md:overflow-x-auto">
           <div className="flex flex-grow items-center justify-between mb-4 md:mb-0">
-            <Link href="/">
-              <a className="py-2 text-2xl"><img className="h-12" src={settings.logo} /></a>
+            <Link className="py-2 text-2xl" href="/">
+              <img className="h-12" src={settings.logo} />
             </Link>
-            <Link href="/"><a className="md-hidden btn">Contact</a></Link>
+            <Link className="md-hidden btn" href="/">Contact</Link>
           </div>
           <div className="flex overflow-x-auto -m-2">
-            <Link href="/about"><a className="w-full md:w-auto m-2 flex-shrink-0">About</a></Link>
+            <Link href="/about" className="w-full md:w-auto m-2 flex-shrink-0">About</Link>
           </div>
           <div className="sm-hidden ml-6">
-            <Link href="/contact"><a className="btn">Contact</a></Link>  
+            <Link href="/contact" className="btn">Contact</Link>  
           </div>
         </nav>
       </Container>

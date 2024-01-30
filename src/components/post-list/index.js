@@ -29,14 +29,12 @@ export default function PostList({ posts, children }) {
                       <Date dateString={post.date} />
                       <h3 className="mt-2">{post.title}</h3>
                       <Link href={`/posts/${post.id}`}>
-                        <a>
-                          <div className="flex justify-between text-blue-700 items-center mt-4">
-                            <div>Read More</div>
-                            <div>
-                              <ArrowRight />
-                            </div>
+                        <div className="flex justify-between text-blue-700 items-center mt-4">
+                          <div>Read More</div>
+                          <div>
+                            <ArrowRight />
                           </div>
-                        </a>
+                        </div>
                       </Link>
                     </div>
                   </div>

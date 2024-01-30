@@ -10,11 +10,11 @@ export default function Footer({}){
         <div className="py-10 flex flex-col justify-start items-start">
           <div>
             <nav className="flex text-black -m-2 text-xl font-bold">
-              <Link href="/about">
-                <a className="m-2">About</a>
+              <Link href="/about" className="m-2">
+                About
               </Link>
-              <Link href="/contact">
-                <a className="m-2">Contact</a>
+              <Link href="/contact" className="m-2">
+                Contact
               </Link>
             </nav>
           </div>
